@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import "./Wallet.scss";
+import "./WalletsETH.scss";
 import Laoyut from "../../../components/Layout/Layout";
 import WalletView from "../views";
-import ModalSave from "../views/ModalSave/ModalSave";
+import ModalEth from "../views/ModalEth/ModalEth";
 import CheckBox from "../../../components/Checkbox/Checkbox";
 
-const Wallet = React.memo((props) => {
-  const [modalSave, setIsModalSave] = useState(true);
+const WalletEth = React.memo((props) => {
+  const [modalEth, setIsModalEth] = useState(true);
 
   const handleSave = (e) => {
     e.preventDefault();
-    setIsModalSave(true);
+    setIsModalEth(true);
   };
 
   const [checked, setChecked] = useState(true);
@@ -178,13 +178,13 @@ const Wallet = React.memo((props) => {
             </div>
           </div>
         </div>
-        <ModalSave
-          modalIsOpen={modalSave}
-          closeModal={() => setIsModalSave(false)}
-        ></ModalSave>
+        <ModalEth
+          modalIsOpen={modalEth}
+          closeModal={() => setIsModalEth(false)}
+        ></ModalEth>
       </Laoyut>
     </>
   );
 });
 
-export default Wallet;
+export default WalletEth;

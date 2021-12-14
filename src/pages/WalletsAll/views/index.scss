@@ -7,6 +7,7 @@
 
     .wallet-view__inner {
       padding-right: 25px;
+      align-items: flex-start;
     }
   }
 
@@ -24,7 +25,7 @@
   &__content {
     display: flex;
     align-items: flex-start;
-    margin-right: 107px;
+    margin-right: 90px;
   }
 
   &__img {

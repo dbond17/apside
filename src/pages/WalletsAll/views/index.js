@@ -1,24 +1,41 @@
-import React from "react";
+import React, { useState } from "react";
 import "./index.scss";
+import ModalAdd from "./ModalAdd/ModalAdd";
 
 const WalletView = React.memo((props) => {
+  const [modalAdd, setIsModalAdd] = useState(false);
+
+  const handleEdit = (e) => {
+    e.preventDefault();
+    setIsModalAdd(true);
+  };
+
   const { isTransaction } = props;
+  
   return (
     <>
-      <div className={`wallet-view ${isTransaction ? 'wallet-view-transaction' : ''}`}>
+      <div
+        className={`wallet-view ${
+          isTransaction ? "wallet-view-transaction" : ""
+        }`}
+      >
         <div className="container">
           <div className="wallet-view__inner">
             <div className="wallet-view__info">
               <div className="wallet-view__content">
                 <div className="wallet-view__img">
-                  <img src="assets/images/tasks-img.png" alt="" />
+                  <img src="assets/images/wallet-img.svg" alt="" />
                 </div>
                 <div className="wallet-view__text">
                   <p>0 Wallets</p>
                   <span>Current saved wallets</span>
                 </div>
               </div>
-              <a href="#" className="wallet-view__btn">
+              <a
+                href="#"
+                className="wallet-view__btn"
+                onClick={(e) => handleEdit(e)}
+              >
                 <img src="assets/images/add-wallet.svg" alt="" />
                 <span>Add Wallet</span>
               </a>
@@ -39,6 +56,10 @@ const WalletView = React.memo((props) => {
           </div>
         </div>
       </div>
+      <ModalAdd
+        modalIsOpen={modalAdd}
+        closeModal={() => setIsModalAdd(false)}
+      ></ModalAdd>
     </>
   );
 });
