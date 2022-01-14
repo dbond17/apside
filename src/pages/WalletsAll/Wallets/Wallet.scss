@@ -1,8 +1,21 @@
 .wallet {
   &__inner {
+    overflow: scroll;
+    width: 100%;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   &__table {
+    width: 1082px;
+    overflow: scroll;
+    height: calc(100vh - 200px);
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     &--empty {
       table {
@@ -18,7 +31,7 @@
               right: 0;
               left: 0;
               display: block;
-              content: '';
+              content: "";
               position: absolute;
             }
           }
@@ -63,7 +76,7 @@
         tr {
           border-top: 1px solid #484f61;
           border-bottom: 1px solid #484f61;
-         
+
           td {
             padding: 12px 0;
             font-size: 13px;
@@ -90,6 +103,5 @@
       border: 2px solid #1556ee;
       border-radius: 2px;
     }
-
   }
 }
