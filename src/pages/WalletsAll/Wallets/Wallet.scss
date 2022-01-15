@@ -10,11 +10,24 @@
 
   &__table {
     width: 1082px;
-    overflow: scroll;
-    height: calc(100vh - 200px);
+    overflow-y: scroll;
+    height: calc(100vh - 230px);
+    padding-right: 10px;
+
+    &::-webkit-scrollbar-thumb {
+      background: rgb(82, 86, 97);
+      border-radius: 20px;
+    }
 
     &::-webkit-scrollbar {
+      background: rgba(255, 255, 255, 0.6);
+      width: 10px;
       display: none;
+      border-radius: 20px;
+
+      @media only screen and (max-height: 660px) {
+        display: block;
+      }
     }
 
     &--empty {
@@ -76,6 +89,10 @@
         tr {
           border-top: 1px solid #484f61;
           border-bottom: 1px solid #484f61;
+
+          &:last-child {
+            border-bottom: none;
+          }
 
           td {
             padding: 12px 0;
